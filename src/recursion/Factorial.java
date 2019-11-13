@@ -6,7 +6,8 @@ public class Factorial {
         if (a == 0) {
             return 1;
         } else {
-
+            fact = a * factorial(a - 1);
+            return fact;
         }
     }
 }
