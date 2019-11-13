@@ -1,5 +1,7 @@
 package recursion;
 
+import java.util.Scanner;
+
 public class Sum {
     public int sum(int a) {
         int s = 0;
@@ -11,4 +13,11 @@ public class Sum {
         }
     }
 
+    public static void main(String[] args) {
+        Sum sum = new Sum();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter number:");
+        int number = input.nextInt();
+        System.out.println(sum.sum(number));
+    }
 }
