@@ -13,8 +13,9 @@ public class Stack {
         if (top > stackSize) {
             System.out.println("Overflow");
         } else {
-
+            stack[top] = argument;
+            top += 1;
+            System.out.println("Pushed Successfully");
         }
-
     }
 }
