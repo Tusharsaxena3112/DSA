@@ -2,12 +2,13 @@ package stack;
 
 public class Stack {
     private int top = 0;
-    private int stackSize = 10;
-    private int[] stack = new int[10];
+    private int stackSize;
+    private int[] stack;
 
-//    public Stack(int stackSize) {
-//        this.stackSize = stackSize;
-//    }
+    public Stack(int stackSize) {
+        this.stackSize = stackSize;
+        stack = new int[stackSize];
+    }
 
     public void push(int argument) {
         if (top > stackSize) {
@@ -31,7 +32,7 @@ public class Stack {
     }
 
     public void showStack() {
-        for (int i = 9; i >= 0; i--) {
+        for (int i = stackSize - 1; i >= 0; i--) {
             System.out.println(stack[i]);
         }
     }
