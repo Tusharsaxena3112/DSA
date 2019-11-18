@@ -2,12 +2,12 @@ package stack;
 
 public class Stack {
     private int top = 0;
-    private int stackSize;
-    private int[] stack = new int[stackSize];
+    private int stackSize = 10;
+    private int[] stack = new int[10];
 
-    public Stack(int stackSize) {
-        this.stackSize = stackSize;
-    }
+//    public Stack(int stackSize) {
+//        this.stackSize = stackSize;
+//    }
 
     public void push(int argument) {
         if (top > stackSize) {
@@ -15,7 +15,7 @@ public class Stack {
         } else {
             stack[top] = argument;
             top += 1;
-            System.out.println("Pushed Successfully");
+            System.out.printf("Pushed Successfully %d\n", argument);
         }
     }
 
@@ -23,16 +23,16 @@ public class Stack {
         if (top < 0) {
             System.out.println("Underflow");
         } else {
-            System.out.println(stack[top]);
-            stack[top] = 0;
+            System.out.printf("Pop successfully %d\n", stack[top - 1]);
+            stack[top - 1] = 0;
             top -= 1;
-            System.out.println("Pop successfully");
+
         }
     }
 
     public void showStack() {
-        for (int i : stack) {
-            System.out.println(i);
+        for (int i = 9; i >= 0; i--) {
+            System.out.println(stack[i]);
         }
     }
 
