@@ -26,6 +26,13 @@ public class Stack {
             System.out.println(stack[top]);
             stack[top] = 0;
             top -= 1;
+            System.out.println("Pop successfully");
+        }
+    }
+
+    public void showStack() {
+        for (int i : stack) {
+            System.out.println(i);
         }
     }
 }
