@@ -18,4 +18,14 @@ public class Stack {
             System.out.println("Pushed Successfully");
         }
     }
+
+    public void pop() {
+        if (top < 0) {
+            System.out.println("Underflow");
+        } else {
+            System.out.println(stack[top]);
+            stack[top] = 0;
+            top -= 1;
+        }
+    }
 }
