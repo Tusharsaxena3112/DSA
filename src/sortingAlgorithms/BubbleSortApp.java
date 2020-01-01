@@ -30,7 +30,7 @@ public class BubbleSortApp<T> {
 
     public void display() {
         for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i]);
+            System.out.print(array[i] + " ");
         }
     }
 }
