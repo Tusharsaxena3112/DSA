@@ -1,4 +1,4 @@
-package sortingAlgorithms;
+package sortingAlgorithms.selectionSort.BubbleSort;
 
 public class BubbleSortApp<T> {
     public int length;
