@@ -2,12 +2,12 @@ package sortingAlgorithms;
 
 public class BubbleSortApp<T> {
     public int length;
-    public int[] array;
     public int index = 0;
+    public int[] array;
 
-    public BubbleSortApp(int[] array, int length) {
+    public BubbleSortApp(int length) {
         this.length = length;
-        this.array = array;
+        array = new int[length];
     }
 
     public void insert(int element) {
