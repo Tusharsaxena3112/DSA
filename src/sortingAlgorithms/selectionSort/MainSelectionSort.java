@@ -8,7 +8,7 @@ public class MainSelectionSort {
         selectionSortApp.insert(1);
         selectionSortApp.insert(105);
         selectionSortApp.insert(90);
-
+        selectionSortApp.selectionSort();
         selectionSortApp.display();
     }
 }
