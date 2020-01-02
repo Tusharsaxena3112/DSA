@@ -1,4 +1,4 @@
-package sortingAlgorithms.selectionSort;
+package sortingAlgorithms.InsertionSort;
 
 public class InsertionSortApp {
     public int[] array;
