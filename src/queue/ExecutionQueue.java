@@ -8,7 +8,7 @@ public class ExecutionQueue {
         queue.dequeue(5);
         queue.dequeue(10);
         queue.dequeue(12);
-//        queue.enqueue();
+        queue.enqueue();
         queue.dequeue(23);
         queue.dequeue(34);
         queue.showQueue();
