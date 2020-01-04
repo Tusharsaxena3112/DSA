@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
 
     private Node first;
@@ -48,6 +50,37 @@ public class LinkedList {
         return indexOf(value) != -1;
     }
 
+
+    public void deleteFirst() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        //[1-->[2-->3]
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+
+        var second = first.next;
+        first.next = null;
+        first = second;
+    }
+
+    public void deleteLast() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        //[1-->2 3]
+        //previous = last
+        if (first == last) {
+            first = last = null;
+            return;
+        }
+        var previous = getPrevious(last);
+        last = previous;
+        last.next = null;
+    }
+
     private class Node {    //  Class Node from which the whole LinkedList has been made.
         // LinkedList is the combination of these Nodes and each node contains a value and a pointer to the next node.
         private int value;
@@ -60,6 +93,17 @@ public class LinkedList {
 
     private boolean isEmpty() {
         return first == null;
+    }
+
+    private Node getPrevious(Node node) {
+        var current = first;
+        while (current != null) {
+            if (current.next == node) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
     }
 
 }
