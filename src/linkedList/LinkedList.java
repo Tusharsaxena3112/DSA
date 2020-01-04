@@ -31,6 +31,19 @@ public class LinkedList {
         }
     }
 
+    public int indexOf(int value) {
+        var current = first;
+        int index = 0;
+        while (current != null) {
+            if (current.value == value) {
+                return index;
+            }
+            current = current.next;
+            index++;
+        }
+        return -1;
+    }
+
     private class Node {    //  Class Node from which the whole LinkedList has been made.
         // LinkedList is the combination of these Nodes and each node contains a value and a pointer to the next node.
         private int value;
