@@ -2,6 +2,9 @@ package linkedList;
 
 public class LinkedList {
 
+    private Node first;
+    private Node last;
+
     public void addLast(int value) {
         Node node = new Node(value);
         if (isEmpty()) {
@@ -11,11 +14,6 @@ public class LinkedList {
             last = node;
         }
     }
-
-
-    private Node first;
-    private Node last;
-
     public void addFirst(int value) {
         Node node = new Node(value);
         if (isEmpty()) {
@@ -25,7 +23,6 @@ public class LinkedList {
             first = node;
         }
     }
-
     public void getAll() {
         var current = first;
         while (current != null) {
@@ -34,7 +31,8 @@ public class LinkedList {
         }
     }
 
-    private class Node {
+    private class Node {    //  Class Node from which the whole LinkedList has been made.
+        // LinkedList is the combination of these Nodes and each node contains a value and a pointer to the next node.
         private int value;
         private Node next;
 
