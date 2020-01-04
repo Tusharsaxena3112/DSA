@@ -44,6 +44,10 @@ public class LinkedList {
         return -1;
     }
 
+    public boolean contains(int value) {
+        return indexOf(value) != -1;
+    }
+
     private class Node {    //  Class Node from which the whole LinkedList has been made.
         // LinkedList is the combination of these Nodes and each node contains a value and a pointer to the next node.
         private int value;

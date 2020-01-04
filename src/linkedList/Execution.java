@@ -7,6 +7,9 @@ public class Execution {
         linkedList.addLast(5);
         linkedList.addFirst(3);
 
+        System.out.println(linkedList.indexOf(5));
+        System.out.println(linkedList.contains(8));
+
         linkedList.getAll();
     }
 }
