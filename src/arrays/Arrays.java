@@ -48,7 +48,7 @@ public class Arrays {
         System.out.println("]");
     }
 
-    public void sort() {
+    public void sort() {   //Using Bubble sort.
         int temp = 0;
         for (int i = array.length - 1; i > 1; i--) {
             for (int j = 0; j < array.length - 1; j++) {
