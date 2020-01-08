@@ -37,7 +37,7 @@ public class Arrays {
         if (index >= 0) {
             array[--index] = 0;
         } else {
-            System.out.println("Array must have element to implement");
+            System.out.println("Array must have element to delete");
         }
     }
 
