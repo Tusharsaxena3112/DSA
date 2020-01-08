@@ -35,9 +35,29 @@ public class Arrays {
 
     public void delete() {
         if (index >= 0) {
-            array[index] = 0;
+            array[--index] = 0;
         } else {
             System.out.println("Array must have element to implement");
+        }
+    }
+
+    public void display() {
+        System.out.print("[ ");
+        for (int i = 0; i < array.length; i++)
+            System.out.printf("%d ", array[i]);
+        System.out.println("]");
+    }
+
+    public void sort() {
+        int temp = 0;
+        for (int i = array.length - 1; i > 1; i--) {
+            for (int j = 0; j < array.length - 1; j++) {
+                if (array[j] < array[j + 1]) {
+                    temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
         }
     }
 }
