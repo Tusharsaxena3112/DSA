@@ -23,4 +23,13 @@ public class Arrays {
         }
         return false;
     }
+
+    public int indexOf(int element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
