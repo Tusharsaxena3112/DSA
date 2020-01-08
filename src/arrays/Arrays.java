@@ -32,4 +32,12 @@ public class Arrays {
         }
         return -1;
     }
+
+    public void delete() {
+        if (index >= 0) {
+            array[index] = 0;
+        } else {
+            System.out.println("Array must have element to implement");
+        }
+    }
 }
