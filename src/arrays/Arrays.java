@@ -11,8 +11,12 @@ public class Arrays {
     }
 
     public void insert(int element) {
-        array[index] = element;
-        index++;
+        if (index < length) {
+            array[index] = element;
+            index++;
+        } else {
+            System.out.println("Array is already full.");
+        }
     }
 
     public boolean contains(int element) {
@@ -43,7 +47,7 @@ public class Arrays {
 
     public void display() {
         System.out.print("[ ");
-        for (int i = 0; i < array.length; i++)
+        for (int i = 0; i < index; i++)
             System.out.printf("%d ", array[i]);
         System.out.println("]");
     }

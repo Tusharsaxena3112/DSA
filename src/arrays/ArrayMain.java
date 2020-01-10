@@ -8,6 +8,7 @@ public class ArrayMain {
         arrays.insert(6);
         arrays.insert(7);
         arrays.insert(8);
+        arrays.insert(10);
 
 
         arrays.sort();
