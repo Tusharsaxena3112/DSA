@@ -4,14 +4,15 @@ public class ArrayMain {
     public static void main(String[] args) {
         Arrays arrays = new Arrays(5);
         arrays.insert(1);
-        arrays.insert(5);
-        arrays.insert(6);
+        arrays.insert(1);
+        arrays.insert(1);
         arrays.insert(7);
         arrays.insert(8);
-        arrays.insert(10);
 
 
         //arrays.sort();
+
+        //System.out.println(arrays.isSorted());
 //        System.out.println(arrays.contains(5));
 //        arrays.display();
 //
@@ -22,6 +23,7 @@ public class ArrayMain {
 //
 //        arrays.display();
 
-        System.out.println(arrays.search(3));
+//        System.out.println(arrays.search(3));
+        System.out.println(java.util.Arrays.toString(arrays.withoutDuplicates()));
     }
 }

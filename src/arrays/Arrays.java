@@ -1,5 +1,7 @@
 package arrays;
 
+import java.util.ArrayList;
+
 public class Arrays {
     private int length;
     private int[] array;
@@ -82,5 +84,38 @@ public class Arrays {
             }
         }
         return -1;
+    }
+
+    public boolean isSorted() {
+        boolean bool = false;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] < array[i + 1]) {
+                bool = true;
+            } else {
+                bool = false;
+                return bool;
+            }
+        }
+        return bool;
+    }
+
+    public Object[] withoutDuplicates() {
+        ArrayList al = new ArrayList();
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    array[j] = 0;
+                }
+            }
+        }
+        for (int k = 0; k < array.length; k++) {
+            if (array[k] != 0) {
+                al.add(array[k]);
+            }
+        }
+
+
+        return al.toArray();
+
     }
 }
