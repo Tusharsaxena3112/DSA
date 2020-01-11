@@ -11,10 +11,11 @@ public class ArrayMain {
         arrays.insert(10);
 
 
-        arrays.sort();
+        //arrays.sort();
 //        System.out.println(arrays.contains(5));
         arrays.display();
 
+        arrays.delete();
         arrays.delete();
         arrays.delete();
         arrays.delete();

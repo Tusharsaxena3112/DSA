@@ -5,7 +5,7 @@ public class Arrays {
     private int[] array;
     private int index;
 
-    public Arrays(int length) {
+    public Arrays(int length) {//Constructor
         this.length = length;
         array = new int[length];
     }
