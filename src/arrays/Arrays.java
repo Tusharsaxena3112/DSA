@@ -64,4 +64,23 @@ public class Arrays {
             }
         }
     }
+
+
+    public int search(int element) {
+        int low = 0;
+        int high = array.length;
+        java.util.Arrays.sort(array);
+        System.out.println(java.util.Arrays.toString(array));
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (array[mid] == element) {
+                return mid;
+            } else if (array[mid] < element) {
+                low = mid + 1;
+            } else if (array[mid] > element) {
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
 }
