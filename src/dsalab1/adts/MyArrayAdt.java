@@ -15,13 +15,21 @@ public class MyArrayAdt implements MyArrayInter {
         this.elementCount = 0;
     }
 
-    //    public int[] sort(){
-//        int array = new int[];
-//        return 0;
-//    }
+    @Override
+    public void traverse() {
+        System.out.println("Printing Array.");
+        for (int i = 0; i < elementCount; i++) {
+            if (i == elementCount - 1) {
+                System.out.print(arr[i]);
+            } else {
+                System.out.print(arr[i] + ",");
+            }
+        }
+    }
+
     @Override
     public boolean insert(int element) {
-        if (this.elementCount != size) {
+        if (!isFull()) {
             arr[elementCount] = element;
             this.elementCount++;
             return true;
@@ -40,6 +48,24 @@ public class MyArrayAdt implements MyArrayInter {
             }
         }
         return false;
+    }
+
+    @Override
+    public int delete() {
+        int response = 0;
+        if (!isEmpty()) {
+            elementCount--;
+            response = arr[elementCount];
+        }
+        return response;
+    }
+
+    private boolean isEmpty() {
+        boolean response = false;
+        if (this.elementCount == 0) {
+            response = true;
+        }
+        return response;
     }
 
     private boolean isFull() {

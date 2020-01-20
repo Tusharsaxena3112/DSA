@@ -6,4 +6,8 @@ public interface MyArrayInter {
 
     public abstract boolean insert(int element);
 
+    public abstract int delete();
+
+    public abstract void traverse();
+
 }
