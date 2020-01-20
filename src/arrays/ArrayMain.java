@@ -4,13 +4,13 @@ public class ArrayMain {
     public static void main(String[] args) {
         Arrays arrays = new Arrays(5);
         arrays.insert(1);
-        arrays.insert(1);
-        arrays.insert(1);
-        arrays.insert(7);
+        arrays.insert(5);
+        arrays.insert(4);
+        arrays.insert(2);
         arrays.insert(8);
 
 
-        //arrays.sort();
+        arrays.sort();
 
         //System.out.println(arrays.isSorted());
 //        System.out.println(arrays.contains(5));
