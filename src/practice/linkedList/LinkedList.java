@@ -6,7 +6,7 @@ public class LinkedList {
 
     public void addLast(int element) {
         Node node = new Node(element);
-        if (first == null) {
+        if (isEmpty()) {
             first = last = node;
         } else {
             last.next = node;
@@ -16,12 +16,16 @@ public class LinkedList {
 
     public void addFirst(int element) {
         Node node = new Node(element);
-        if (first == null) {
+        if (isEmpty()) {
             first = last = node;
         } else {
             node.next = first;
             first = node;
         }
+    }
+
+    public boolean isEmpty() {
+        return first == null;
     }
 
     private class Node {
