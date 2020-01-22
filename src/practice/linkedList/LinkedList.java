@@ -48,6 +48,34 @@ public class LinkedList {
         return false;
     }
 
+    public void removeFirst() {
+        if (first == last) {
+            first = last = null;
+            return;
+        } else {
+            var second = first.next;
+            first.next = null;
+            first = second;
+        }
+    }
+
+    public void removeLast() {
+        var previousNode = getPreviousNode(last);
+        previousNode = last;
+        previousNode.next = null;
+    }
+
+    public Node getPreviousNode(Node node) {
+        var current = first;
+        while (current.next != null) {
+            if (current.next == node) {
+                return current;
+            }
+            current = current.next;
+        }
+        return null;
+    }
+
     private class Node {
         private int value;
         private Node next;
