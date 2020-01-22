@@ -28,6 +28,26 @@ public class LinkedList {
         return first == null;
     }
 
+    public int indexOf(int element) {
+        Node current = first;
+        int index = 0;
+        while (current != null) {
+            if (current.value == element) {
+                return index;
+            }
+            index++;
+            current = current.next;
+        }
+        return -1;
+    }
+
+    public boolean contains(int element) {
+        if (indexOf(element) != -1) {
+            return true;
+        }
+        return false;
+    }
+
     private class Node {
         private int value;
         private Node next;
