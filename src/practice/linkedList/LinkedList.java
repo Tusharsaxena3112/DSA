@@ -61,11 +61,11 @@ public class LinkedList {
 
     public void removeLast() {
         var previousNode = getPreviousNode(last);
-        previousNode = last;
-        previousNode.next = null;
+        last = previousNode;
+        last.next = null;
     }
 
-    public Node getPreviousNode(Node node) {
+    private Node getPreviousNode(Node node) {
         var current = first;
         while (current.next != null) {
             if (current.next == node) {
@@ -75,6 +75,15 @@ public class LinkedList {
         }
         return null;
     }
+
+    public void display() {
+        var current = first;
+        while (current != null) {
+            System.out.print(current.value + " ");
+            current = current.next;
+        }
+    }
+
 
     private class Node {
         private int value;

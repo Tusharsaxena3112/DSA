@@ -15,5 +15,9 @@ public class Main {
 
         linkedList.addLast(40);
 
+        linkedList.removeFirst();
+        linkedList.removeLast();
+
+        linkedList.display();
     }
 }
