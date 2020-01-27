@@ -10,4 +10,16 @@ public class Employee {
         this.age = age;
         this.name = name;
     }
+
+    public int getIdentification() {
+        return identification;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
 }
