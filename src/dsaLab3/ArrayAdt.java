@@ -1,5 +1,5 @@
 package dsaLab3;
 
-public class ArrayAdt {
-
+public interface ArrayAdt<E> {
+    E[] sort();//sort method to sort Employee..
 }
