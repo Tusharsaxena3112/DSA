@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Factorial {
     public static int factorial(int a) {
         int fact = 1;
-        if (a == 0) {
+        if (a == 0 || a == 1) {
             return 1;
         } else {
             fact = a * factorial(a - 1);

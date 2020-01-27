@@ -83,8 +83,6 @@ public class LinkedList {
             current = current.next;
         }
     }
-
-
     private class Node {
         private int value;
         private Node next;
