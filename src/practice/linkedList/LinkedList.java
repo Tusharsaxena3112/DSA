@@ -1,6 +1,6 @@
 package practice.linkedList;
 
-public class LinkedList implements practice.adt.LinkedList {
+public class LinkedList {
     private Node first;
     private Node last;
 
@@ -65,6 +65,20 @@ public class LinkedList implements practice.adt.LinkedList {
         last.next = null;
     }
 
+    public void deleteBetween(int pos) {
+        int index = 0;
+        Node current = first;
+        while (index < pos) {
+            current = current.next;
+            index++;
+        }
+        var previousNode = getPreviousNode(current);
+        previousNode.next = current.next;
+        current.next = null;
+
+    }
+
+
     private Node getPreviousNode(Node node) {
         var current = first;
         while (current.next != null) {
@@ -83,6 +97,7 @@ public class LinkedList implements practice.adt.LinkedList {
             current = current.next;
         }
     }
+
     private class Node {
         private int value;
         private Node next;

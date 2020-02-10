@@ -15,8 +15,13 @@ public class Main {
 
         linkedList.addLast(40);
 
-        linkedList.removeFirst();
-        linkedList.removeLast();
+        linkedList.display();
+        System.out.println();
+
+//        linkedList.removeFirst();
+//        linkedList.removeLast();
+
+        linkedList.deleteBetween(1);
 
         linkedList.display();
     }
