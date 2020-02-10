@@ -9,8 +9,9 @@ public class Execution {
         linkedList.addFirst(10);
 
 
-        linkedList.deleteFirst();
-        linkedList.deleteLast();
+//        linkedList.deleteFirst();
+//        linkedList.deleteLast();
+        linkedList.insertAt(15, 2);
         linkedList.getAll();
     }
 }

@@ -27,7 +27,6 @@ public class Stack {
             System.out.printf("Pop successfully %d\n", stack[top - 1]);
             stack[top - 1] = 0;
             top -= 1;
-
         }
     }
 
@@ -36,6 +35,4 @@ public class Stack {
             System.out.println(stack[i]);
         }
     }
-
-
 }

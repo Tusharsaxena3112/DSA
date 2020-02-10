@@ -1,6 +1,6 @@
 package practice.linkedList;
 
-public class LinkedList {
+public class LinkedList implements practice.adt.LinkedList {
     private Node first;
     private Node last;
 

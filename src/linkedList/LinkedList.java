@@ -81,6 +81,20 @@ public class LinkedList {
         last.next = null;
     }
 
+    public void insertAt(int item, int in) {
+        int index = 0;
+        Node node = new Node(item);
+        var current = first;
+        while (current != null) {
+            index++;
+            if (index == in) {
+                node.next = current.next;
+                current.next = node;
+            }
+            current = current.next;
+        }
+    }
+
     private class Node {    //  Class Node from which the whole LinkedList has been made.
         // LinkedList is the combination of these Nodes and each node contains a value and a pointer to the next node.
         private int value;
