@@ -65,6 +65,32 @@ public class LinkedList {
         last.next = null;
     }
 
+    private int size() {
+        var current = first;
+        int index = 1;
+        while (current.next != null) {
+            current = current.next;
+            index++;
+        }
+        return index;
+    }
+
+    public void sort() {
+        int temp;
+        for (int i = size() - 1; i > 1; i--) {
+            var current = first;
+            for (int j = 0; j < i; j++) {
+                if (current.value > current.next.value) {
+                    temp = current.value;
+                    current.value = current.next.value;
+                    current.next.value = temp;
+                }
+                current = current.next;
+            }
+        }
+
+    }
+
     public void addAt(int pos, int element) {
         Node node = new Node(element);
         var current = first;

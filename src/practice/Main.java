@@ -17,7 +17,9 @@ public class Main {
         linkedList.display();
         System.out.println();
 
-        linkedList.addAt(3, 18);
+//        linkedList.addAt(3, 18);
+
+        linkedList.sort();
 
         linkedList.display();
         System.out.println();
@@ -25,8 +27,8 @@ public class Main {
 //        linkedList.removeFirst();
 //        linkedList.removeLast();
 
-        linkedList.deleteBetween(1);
-
-        linkedList.display();
+//        linkedList.deleteBetween(1);
+//
+//        linkedList.display();
     }
 }
