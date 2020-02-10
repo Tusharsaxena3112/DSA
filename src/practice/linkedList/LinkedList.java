@@ -65,6 +65,18 @@ public class LinkedList {
         last.next = null;
     }
 
+    public void addAt(int pos, int element) {
+        Node node = new Node(element);
+        var current = first;
+        int index = 1;
+        while (index < pos - 1) {
+            current = current.next;
+            index++;
+        }
+        node.next = current.next;
+        current.next = node;
+    }
+
     public void deleteBetween(int pos) {
         int index = 0;
         Node current = first;

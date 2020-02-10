@@ -12,8 +12,12 @@ public class Main {
         linkedList.addFirst(11);
         linkedList.addFirst(20);
         linkedList.addFirst(30);
-
         linkedList.addLast(40);
+
+        linkedList.display();
+        System.out.println();
+
+        linkedList.addAt(3, 18);
 
         linkedList.display();
         System.out.println();
