@@ -14,10 +14,26 @@ public class Queue {
     }
 
     public void enqueue(int data) {
-        if (isEmpty()) {
-
+        if (!isFull()) {
+            queue[rear] = data;
+            rear++;
+            size++;
+        } else {
+            System.out.println("Queue is full..");
         }
     }
+
+    public int dequeue() {
+        if (!isEmpty()) {
+            size--;
+            return queue[front++];
+        } else {
+            System.out.println("Queue is empty..");
+        }
+        return 0;
+    }
+
+
 
     public boolean isEmpty() {
         return size < maxSize;
