@@ -30,6 +30,13 @@ public class LinkedList {
         return response;
     }
 
+    public void show() {
+        var current = first;
+        while (current != null) {
+            System.out.print(current.getData() + " ");
+        }
+    }
+
     private boolean isEmpty() {
         return first == null;
     }
