@@ -9,25 +9,29 @@ public class LinkedList {
         if (isEmpty()) {
             first = last = node;
         } else {
-            last.next = node;
+            last.setNext(node);
             last = node;
         }
+    }
 
+    public Node deleteFirst() {
+        if (isEmpty()) {
+            return null;
+        }
+        if (first == last) {
+            var fi = first;
+            first = last = null;
+            return fi;
+        }
+        var response = first;
+        var second = first.getNext();
+        first.setNext(null);
+        first = second;
+        return response;
     }
 
     private boolean isEmpty() {
         return first == null;
     }
-
-    private class Node {
-        private int data;
-        private Node next;
-        private Node previous;
-
-        public Node(int data) {
-            this.data = data;
-        }
-    }
-
 
 }
