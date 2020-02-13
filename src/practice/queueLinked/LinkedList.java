@@ -34,6 +34,7 @@ public class LinkedList {
         var current = first;
         while (current != null) {
             System.out.print(current.getData() + " ");
+            current = current.getNext();
         }
     }
 
