@@ -7,4 +7,7 @@ public interface QueueInterface {
     //Delete the element from the queue
     int dequeue();
 
+    //Shows the Queue
+    void show();
+
 }
