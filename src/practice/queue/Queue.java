@@ -1,6 +1,8 @@
 package practice.queue;
 
-public class Queue {
+import java.util.Arrays;
+
+public class Queue implements QueueInterface {
     private int front;
     private int rear;
     private int maxSize;
@@ -11,37 +13,46 @@ public class Queue {
         queue = new int[maxSize];
         this.front = 0;
         this.rear = 0;
+        this.size = 0;
+        this.maxSize = maxSize;
     }
 
+    @Override
     public void enqueue(int data) {
         if (!isFull()) {
             queue[rear] = data;
-            rear++;
+            rear = (rear + 1) % maxSize;
             size++;
         } else {
             System.out.println("Queue is full..");
         }
     }
 
+    @Override
     public int dequeue() {
         if (!isEmpty()) {
             size--;
-            return queue[front++];
+            return queue[front = (front + 1) % maxSize];
         } else {
             System.out.println("Queue is empty..");
         }
         return 0;
     }
 
+    @Override
     public void show() {
         for (int i = 0; i < size; i++) {
-            System.out.println(queue[front + i] + " ");
+            System.out.print(queue[(front + i) % maxSize] + " ");
         }
+        System.out.println(Arrays.toString(queue));
     }
 
 
     public boolean isEmpty() {
-        return size < maxSize;
+        if (size == 0) {
+            return true;
+        }
+        return false;
     }
 
     public boolean isFull() {
