@@ -7,6 +7,8 @@ public class LinkedList {
     private Node first;
     private Node last;
 
+    private Node c = first;
+
     public void addLast(int value) {
         Node node = new Node(value);
         if (isEmpty()) {
@@ -109,7 +111,13 @@ public class LinkedList {
         return first == null;
     }
 
-    private Node getPrevious(Node node) {
+    public int getData() {
+        int v = c.value;
+        c = c.next;
+        return v;
+    }
+
+    public Node getPrevious(Node node) {
         var current = first;
         while (current != null) {
             if (current.next == node) {

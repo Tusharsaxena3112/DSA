@@ -88,7 +88,6 @@ public class LinkedList {
                 current = current.next;
             }
         }
-
     }
 
     public void addAt(int pos, int element) {
