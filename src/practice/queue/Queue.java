@@ -33,6 +33,11 @@ public class Queue {
         return 0;
     }
 
+    public void show() {
+        for (int i = 0; i < size; i++) {
+            System.out.println(queue[front + i] + " ");
+        }
+    }
 
 
     public boolean isEmpty() {
