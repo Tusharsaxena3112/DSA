@@ -9,6 +9,22 @@ public class Node {
         this.data = data;
     }
 
+    public Node getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(Node previous) {
+        this.previous = previous;
+    }
+
+    public int getData() {
+        return data;
+    }
+
+    public void setData(int data) {
+        this.data = data;
+    }
+
     public Node getNext() {
         return next;
     }
