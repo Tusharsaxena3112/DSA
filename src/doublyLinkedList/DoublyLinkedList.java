@@ -18,8 +18,15 @@ public class DoublyLinkedList {
 
     public void addLast(int data) {
         Node node = new Node(data);
-
+        if (first == null) {
+            first = last = node;
+        } else {
+            node.setPrevious(last);
+            last.setNext(node);
+            last = node;
+        }
     }
+
 
     public void show() {
         var current = first;
