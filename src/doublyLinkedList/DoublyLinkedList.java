@@ -49,6 +49,10 @@ public class DoublyLinkedList {
         }
     }
 
+    public void deleteFirst() {
+
+    }
+
     public void show() {
         var current = first;
         while (current != null) {
