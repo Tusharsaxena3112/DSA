@@ -14,4 +14,18 @@ public class DoublyLinkedList {
             first = node;
         }
     }
+
+
+    public void addLast(int data) {
+        Node node = new Node(data);
+
+    }
+
+    public void show() {
+        var current = first;
+        while (current != null) {
+            System.out.print(current.getData() + " ");
+            current = current.getNext();
+        }
+    }
 }

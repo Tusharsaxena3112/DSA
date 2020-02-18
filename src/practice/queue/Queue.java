@@ -1,5 +1,5 @@
 package practice.queue;
-
+// WAP to print all the elements of the given queue without changing its state.
 import java.util.Arrays;
 
 public class Queue implements QueueInterface {
