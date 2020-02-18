@@ -50,7 +50,16 @@ public class DoublyLinkedList {
     }
 
     public void deleteFirst() {
-
+        if (first == null) {
+            System.out.println("Must have elements to delete.");
+        } else if (first.getNext() == null) {
+            first = last = null;
+        } else {
+            var second = first.getNext();
+            first.setNext(null);
+            first = second;
+            first.setPrevious(null);
+        }
     }
 
     public void show() {
