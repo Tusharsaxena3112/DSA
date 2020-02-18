@@ -4,6 +4,7 @@ public class DoublyLinkedList {
     private Node first;
     private Node last;
 
+
     public void addFirst(int data) {
         Node node = new Node(data);
         if (first == null) {
@@ -27,6 +28,26 @@ public class DoublyLinkedList {
         }
     }
 
+    public void traverseReverse() {
+        var current = last;
+        while (current != null) {
+            System.out.print(current.getData() + " ");
+            current = current.getPrevious();
+        }
+        System.out.println();
+    }
+
+    public void deleteLast() {
+        if (first == null) {
+            System.out.println("Must have elements to delete.");
+        } else if (first.getNext() == null) {
+            first = last = null;
+//            System.out.println("Must have elements to delete.");
+        } else {
+            last = last.getPrevious();
+            last.setNext(null);
+        }
+    }
 
     public void show() {
         var current = first;
@@ -34,5 +55,6 @@ public class DoublyLinkedList {
             System.out.print(current.getData() + " ");
             current = current.getNext();
         }
+        System.out.println();
     }
 }
