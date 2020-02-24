@@ -8,4 +8,6 @@ public interface DoubleEndedQueueADT {
     int dequeueRear();
 
     int dequeueFront();
+
+    void showQueue();
 }
