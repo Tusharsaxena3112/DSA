@@ -36,14 +36,18 @@ public class BinarySearchTree {
     }
 
     public void displayInOrder() {
+        inOrder(root);
+    }
 
+    public void postOrder() {
+        postOrder(root);
     }
 
     private void preOrder(Node node) {
         if (node == null) {
             return;
         }
-        System.out.println(node.getData());
+        System.out.print(node.getData() + " ");
         preOrder(node.getLeft());
         preOrder(node.getRight());
     }
