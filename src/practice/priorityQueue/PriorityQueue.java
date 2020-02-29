@@ -13,7 +13,7 @@ public class PriorityQueue {
     }
 
     public void enqueue(int element) {
-        if (rear < maxSize) {
+        if (!isFull()) {
             queue[rear % maxSize] = element;
             rear = (rear + 1) % maxSize;
             size++;
@@ -42,6 +42,14 @@ public class PriorityQueue {
     public boolean isFull() {
         boolean response = false;
         if (size == maxSize) {
+            response = true;
+        }
+        return response;
+    }
+
+    public boolean isEmpty() {
+        boolean response = false;
+        if (size == 0) {
             response = true;
         }
         return response;
