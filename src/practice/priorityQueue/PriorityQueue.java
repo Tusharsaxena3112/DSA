@@ -38,4 +38,12 @@ public class PriorityQueue {
             System.out.print(queue[i % maxSize] + " ");
         }
     }
+
+    public boolean isFull() {
+        boolean response = false;
+        if (size == maxSize) {
+            response = true;
+        }
+        return response;
+    }
 }
