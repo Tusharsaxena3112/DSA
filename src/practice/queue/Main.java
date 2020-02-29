@@ -16,7 +16,7 @@ public class Main {
 
         queue.enqueue(60);
 
-        System.out.println(queue.isEmpty());
+//        System.out.println(queue.isEmpty());
 
         queue.show();
     }

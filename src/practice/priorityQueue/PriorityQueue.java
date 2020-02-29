@@ -1,5 +1,7 @@
 package practice.priorityQueue;
 
+import java.util.Arrays;
+
 public class PriorityQueue {
     int maxSize;
     private int[] queue;
@@ -17,6 +19,13 @@ public class PriorityQueue {
             queue[rear % maxSize] = element;
             rear = (rear + 1) % maxSize;
             size++;
+//            for(int i=rear;i>front;i--){
+//                if(queue[i]>queue[i-1]){
+//                    int temp=queue[i];
+//                    queue[i]=queue[i-1];
+//                    queue[i-1]=temp;
+//                }
+//            }
         } else {
             System.out.println("Queue is full");
         }
@@ -24,8 +33,9 @@ public class PriorityQueue {
 
     public int dequeue() {
         int response = 0;
-        if (front >= 0) {
-            response = queue[front = (front + 1) % maxSize];
+        if (!isEmpty()) {
+            response = queue[front = (front) % maxSize];
+            front = (front + 1) % maxSize;
             size--;
         } else {
             response = -1;
@@ -34,9 +44,19 @@ public class PriorityQueue {
     }
 
     public void traverse() {
-        for (int i = front; i < size; i++) {
-            System.out.print(queue[i % maxSize] + " ");
+        for (int i = size; i >= 1; i--) {
+            for (int j = 0; j < size - 1; j++) {
+                if (queue[j] < queue[j + 1]) {
+                    int temp = queue[j];
+                    queue[j] = queue[j + 1];
+                    queue[j + 1] = temp;
+                }
+            }
         }
+        for (int i = 0; i < size; i++) {
+            System.out.print(queue[(front + i) % maxSize] + " ");
+        }
+        System.out.println(Arrays.toString(queue));
     }
 
     public boolean isFull() {

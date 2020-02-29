@@ -9,7 +9,12 @@ public class Main {
         pq.enqueue(40);
         pq.enqueue(50);
 
-        pq.enqueue(60);
+        pq.dequeue();
+//        pq.dequeue();
+//        pq.dequeue();
+
+//        pq.enqueue(60);
+//        pq.enqueue(70);
 
         pq.traverse();
     }
