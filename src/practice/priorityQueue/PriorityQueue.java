@@ -20,4 +20,14 @@ public class PriorityQueue {
         }
     }
 
+    public int dequeue() {
+        int response = 0;
+        if (front >= 0) {
+            response = queue[front = (front + 1) % maxSize];
+        } else {
+            response = -1;
+        }
+        return response;
+    }
+
 }
