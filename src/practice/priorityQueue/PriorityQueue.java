@@ -13,8 +13,8 @@ public class PriorityQueue {
 
     public void enqueue(int element) {
         if (rear < maxSize) {
-            queue[rear] = element;
-            rear++;
+            queue[rear % maxSize] = element;
+            rear = (rear + 1) % maxSize;
         } else {
             System.out.println("Queue is full");
         }
