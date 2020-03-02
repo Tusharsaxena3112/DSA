@@ -44,6 +44,14 @@ public class BinarySearchTree {
         return response;
     }
 
+    public void traverseInOrder(TreeNode treeNode) {
+        if (treeNode != null) {
+            traverseInOrder(treeNode.getLeft());
+            System.out.println(treeNode.getData());
+            traverseInOrder(treeNode.getRight());
+        }
+    }
+
     private boolean isEmpty() {
         return root == null;
     }
