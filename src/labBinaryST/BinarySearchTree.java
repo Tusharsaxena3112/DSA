@@ -117,10 +117,41 @@ public class BinarySearchTree {
                     root = temp.getLeft();
                 }
             } else if (hasRightChild(temp)) {
-
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(temp.getRight());
+                    } else {
+                        parent.setRight(temp.getRight());
+                    }
+                } else {
+                    root = temp.getRight();
+                }
+            } else {
+                TreeNode successor = getSuccessor(temp);
+                successor.setLeft(temp.getLeft());
+                successor.setRight(temp.getRight());
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(successor);
+                    } else {
+                        parent.setRight(successor);
+                    }
+                } else {
+                    root = successor;
+                }
             }
         }
+        return response;
+    }
 
+    private TreeNode getSuccessor(TreeNode temp) {
+        TreeNode response = null;
+        temp = temp.getRight();
+        while (temp != null) {
+            response = temp;
+            temp = temp.getLeft();
+        }
+        response = delete(response.getData());
         return response;
     }
 
