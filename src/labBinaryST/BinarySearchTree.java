@@ -94,7 +94,55 @@ public class BinarySearchTree {
         }
         // search end
         // temp is containing the node to be deleted or null
+        if (temp != null) {
+            response = temp;
+            if (isLeaf(temp)) {
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(null);
+                    } else {
+                        parent.setRight(null);
+                    }
+                } else {
+                    root = null;
+                }
+            } else if (hasLeftChild(temp)) {
+                if (parent != null) {
+                    if (data < parent.getData()) {
+                        parent.setLeft(temp.getLeft());
+                    } else {
+                        parent.setRight(temp.getLeft());
+                    }
+                } else {
+                    root = temp.getLeft();
+                }
+            } else if (hasRightChild(temp)) {
+
+            }
+        }
+
         return response;
+    }
+
+    private boolean hasRightChild(TreeNode temp) {
+        boolean response = false;
+        if ((temp.getRight() != null) && (temp.getLeft() == null)) {
+            response = true;
+        }
+        return response;
+
+    }
+
+    private boolean hasLeftChild(TreeNode temp) {
+        boolean response = false;
+        if ((temp.getLeft() != null) && (temp.getRight() == null)) {
+            response = true;
+        }
+        return response;
+    }
+
+    private boolean isLeaf(TreeNode treeNode) {
+        return treeNode.getLeft() == null && treeNode.getRight() == null;
     }
 
     private boolean isEmpty() {
