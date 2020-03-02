@@ -18,7 +18,7 @@ public class BinarySearchTree {
                     temp = temp.getRight();
                 }
             }
-            if (parent.getData() <= treeNode.getData()) {
+            if (treeNode.getData() <= parent.getData()) {
                 parent.setLeft(treeNode);
             } else {
                 parent.setRight(treeNode);
