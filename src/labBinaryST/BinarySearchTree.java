@@ -24,11 +24,28 @@ public class BinarySearchTree {
                 parent.setRight(treeNode);
             }
         }
-
     }
 
+    public boolean search(int data) {
+        boolean response = false;
+        var temp = root;
+        while (temp != null) {
+            if (temp.getData() == data) {
+                response = true;
+                break;
+            } else {
+                if (data < temp.getData()) {
+                    temp = temp.getLeft();
+                } else {
+                    temp = temp.getRight();
+                }
+            }
+        }
+        return response;
+    }
 
-    public boolean isEmpty() {
+    private boolean isEmpty() {
         return root == null;
     }
+
 }
