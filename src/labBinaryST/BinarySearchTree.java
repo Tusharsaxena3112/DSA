@@ -1,5 +1,8 @@
 package labBinaryST;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree {
     private TreeNode root;
 
@@ -49,6 +52,26 @@ public class BinarySearchTree {
             traverseInOrder(treeNode.getLeft());
             System.out.println(treeNode.getData());
             traverseInOrder(treeNode.getRight());
+        }
+    }
+
+
+    public void traverseBreadthFirst(TreeNode node) {
+        if (node != null) {
+            Queue<TreeNode> queue = new LinkedList<>();
+            queue.add(node);
+            while (!queue.isEmpty()) {
+                TreeNode currentNode = queue.remove();
+                System.out.print(currentNode.getData() + " ");
+                if (currentNode.getLeft() != null) {
+                    queue.add(currentNode.getLeft());
+                }
+                if (currentNode.getRight() != null) {
+                    queue.add(currentNode.getRight());
+                }
+            }
+        } else {
+            System.out.println("Tree is Empty");
         }
     }
 
