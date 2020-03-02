@@ -6,6 +6,10 @@ import java.util.Queue;
 public class BinarySearchTree {
     private TreeNode root;
 
+    public TreeNode getRoot() {
+        return root;
+    }
+
     public void insert(int data) {
         TreeNode treeNode = new TreeNode(data);
         if (isEmpty()) {
@@ -73,6 +77,24 @@ public class BinarySearchTree {
         } else {
             System.out.println("Tree is Empty");
         }
+    }
+
+    public TreeNode delete(int data) {
+        TreeNode response = null;
+        // 1--> Search the node with given value.
+        TreeNode temp = root;
+        TreeNode parent = null;
+        while (temp != null && temp.getData() != data) {
+            parent = temp;
+            if (data < temp.getData()) {
+                temp = temp.getLeft();
+            } else {
+                temp = temp.getRight();
+            }
+        }
+        // search end
+        // temp is containing the node to be deleted or null
+        return response;
     }
 
     private boolean isEmpty() {
