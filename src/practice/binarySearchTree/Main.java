@@ -9,6 +9,10 @@ public class Main {
         bst.add(23);
         bst.add(5);
 
-        bst.display();
+        bst.displayPreOrder();
+        System.out.println();
+//        bst.displayPostOrder();
+//        System.out.println();
+//        bst.displayInOrder();
     }
 }

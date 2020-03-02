@@ -39,9 +39,9 @@ public class BinarySearchTree {
         inOrder(root);
     }
 
-    public void postOrder() {
-        postOrder(root);
-    }
+//    public void displayPostOrder() {
+//        postOrder(root);
+//    }
 
     private void preOrder(Node node) {
         if (node == null) {
