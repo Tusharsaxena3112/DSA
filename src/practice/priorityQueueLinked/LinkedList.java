@@ -1,26 +1,25 @@
 package practice.priorityQueueLinked;
 
-import practice.queueLinked.Node;
-
 public class LinkedList {
     private Node first;
     private Node last;
+    private int size = 0;
 
-    public Node getFirst() {
-        return first;
-    }
-
-    public void setFirst(Node first) {
-        this.first = first;
-    }
-
-    public Node getLast() {
-        return last;
-    }
-
-    public void setLast(Node last) {
-        this.last = last;
-    }
+//    public Node getFirst() {
+//        return first;
+//    }
+//
+//    public void setFirst(Node first) {
+//        this.first = first;
+//    }
+//
+//    public Node getLast() {
+//        return last;
+//    }
+//
+//    public void setLast(Node last) {
+//        this.last = last;
+//    }
 
     public void addFirst(int element) {
         Node node = new Node(element);
@@ -30,6 +29,7 @@ public class LinkedList {
             node.setNext(first);
             first = node;
         }
+        size++;
     }
 
     public void addLast(int data) {
@@ -40,6 +40,7 @@ public class LinkedList {
             last.setNext(node);
             last = node;
         }
+        size++;
     }
 
     public Node deleteFirst() {
@@ -49,12 +50,14 @@ public class LinkedList {
         if (first == last) {
             var fi = first;
             first = last = null;
+            size--;
             return fi;
         }
         var response = first;
         var second = first.getNext();
         first.setNext(null);
         first = second;
+        size--;
         return response;
     }
 
@@ -75,6 +78,25 @@ public class LinkedList {
             current = current.getNext();
         }
         return null;
+    }
+
+    public void addThroughSorting(int element) {
+        Node node = new Node(element);
+        if (first == null) {
+            first = last = node;
+        } else {
+            node.setNext(first);
+            first = node;
+        }
+        var current = first;
+        while (current != null) {
+            if (node.getData() > current.getData()) {
+                int temp = current.getData();
+                current.setData(node.getData());
+                node.setData(temp);
+            }
+            current = current.getNext();
+        }
     }
 
     private boolean isEmpty() {
