@@ -12,6 +12,7 @@ public class QuickSort {
     }
 
     private int partition(int[] arr, int lower, int upper) {
+
         int pivot = arr[lower];
         int down = lower;
         int up = upper;

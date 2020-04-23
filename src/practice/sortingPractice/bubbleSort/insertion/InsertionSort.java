@@ -10,11 +10,10 @@ public class InsertionSort {
     }
 
     public void sort() {
-        int temp;
-        for (int i = 1; i < arr.length; i++) {  // 2,1,3,7,5 // 2,2,3,7,5 // 1,2,3,7,5 // 1,2,3,7,7 //1,2,3,5,7
-            temp = arr[i];
+        for (int i = 1; i < arr.length; i++) {
+            int temp = arr[i];
             int j = i;
-            while (j > 0 && temp < arr[j - 1]) {
+            while (j > 0 && arr[j - 1] > temp) {
                 arr[j] = arr[j - 1];
                 j--;
             }
