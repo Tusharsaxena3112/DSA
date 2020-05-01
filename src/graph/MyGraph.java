@@ -23,6 +23,21 @@ public class MyGraph {
 
     public boolean removeEdge(int node1, int node2) {
         boolean response = false;
+        if (node1 < maxNodes && node2 < maxNodes) {
+            if (isEdge(node1, node2)) {
+                adjacencyMatrix[node1][node2] = 0;
+                adjacencyMatrix[node2][node1] = 0;
+                response = true;
+            }
+        }
+        return response;
+    }
+
+    private boolean isEdge(int node1, int node2) {
+        boolean response = false;
+        if (adjacencyMatrix[node1][node2] == 1) {
+            response = true;
+        }
         return response;
     }
 }
