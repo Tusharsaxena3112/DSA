@@ -40,4 +40,17 @@ public class MyGraph {
         }
         return response;
     }
+
+    public void display() {
+        for (int i = 0; i < maxNodes; i++) {
+            System.out.print(i + "\t");
+        }
+        for (int i = 0; i < maxNodes; i++) {
+            System.out.print(i + "\t");
+            for (int j = 0; j < maxNodes; j++) {
+                System.out.print(adjacencyMatrix[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
 }
