@@ -42,9 +42,11 @@ public class MyGraph {
     }
 
     public void display() {
+        System.out.print("\t");
         for (int i = 0; i < maxNodes; i++) {
             System.out.print(i + "\t");
         }
+        System.out.println();
         for (int i = 0; i < maxNodes; i++) {
             System.out.print(i + "\t");
             for (int j = 0; j < maxNodes; j++) {
